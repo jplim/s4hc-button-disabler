@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "S/4HANA Cloud Transport Button Disabler",
+  "version": "0.0.1",
+  "description": "",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://*.s4hana.ondemand.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.s4hana.ondemand.com/*"],
+      "js": ["content-script.js"],
+      "world": "MAIN"
+    }
+  ],
+  "icon": {
+    "16": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon-128.png"
+  }
+}
